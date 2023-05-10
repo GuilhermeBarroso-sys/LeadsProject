@@ -19,7 +19,7 @@
   - pnpm 
   #### Running the project 🚀
   
-  1. First, rename the `.env.example` file to `.env` in the `autoProjectTelegramServer` folder  and complete the required environments .
+  1. First, rename the `.env.example` file to `.env` in the `autoProjectTelegramServer` and `autoProjectApi` folder  and complete the required environments .
   2. Run pnpm i in all folders (`autoProjectTelegramServer`, `autoProjectFront`, `autoProjectApi`)
   3. In the `autoProjectApi` folder, run this command:
  
@@ -29,6 +29,23 @@
 
     npm run dev
  
+  ### Telegram available commands:
+  ```
+  /email [email] [id] - This command send a specific lead to an E-mail
+
+  Example:
+  /email guibarrosodeoliveira5@gmail.com 36
+  ```
+  ```
+  /report - This command generate a CSV with all leads. (You can pass an E-mail to sent this CSV. Example: /report example@gmail.com ) 
+  ```
+  ```
+  /deleteLead id - Delete an specific lead by Id
+
+  Example:
+  /deleteLead 36
+
+  ```
  And that's it! Contributions are welcome, feel free to open a pull request if you have any ideas or improvements.
 
 

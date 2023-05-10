@@ -16,6 +16,7 @@
   - Telegram Chat group (CHAT_ID)
   - Node.js (Version 16.x in this project)
   - E-mail (gmail)
+  - pnpm 
   #### Running the project 🚀
   
   1. First, rename the `.env.example` file to `.env` in the `autoProjectTelegramServer` folder  and complete the required environments .

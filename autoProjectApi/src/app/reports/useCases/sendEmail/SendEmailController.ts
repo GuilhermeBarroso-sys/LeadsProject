@@ -20,6 +20,8 @@ class SendEmailController {
 			});
 			return response.status(204).send();
 		} catch(err) {
+			console.log(err.message);
+		
 			return response.status(500).json("Server Error, details: " + err.message);
 		}
 	}

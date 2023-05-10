@@ -8,7 +8,7 @@ class CreateLeadUseCase {
 		const lead = await this.leadRepository.createLead({
 			data
 		});
-		console.log("ok");
+
 		io.emit("newLead", lead);
 	}
 }

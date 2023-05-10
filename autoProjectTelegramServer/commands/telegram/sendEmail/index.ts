@@ -3,7 +3,7 @@ import { ITelegramFunctionParams } from "../ITelegramFunctions";
 import { Lead } from "../../..";
 import { formatDate } from "../../../helpers/formatDate";
 
-export async function telegramSendEmail({text, telegramBot } : ITelegramFunctionParams ) {
+export async function telegramSendEmail({text, telegramBot, msg } : ITelegramFunctionParams ) {
 	try {
 		const [email, id] = text.split(" ");
 		const {data} = await axios.get<Lead>(`http://localhost:3000/reports/leads/${id}`);
@@ -14,8 +14,11 @@ export async function telegramSendEmail({text, telegramBot } : ITelegramFunction
 			"recipient": email,
 			"subject": `New Lead | Plan ${data.plan}`
 		});
+		telegramBot.sendMessage(process.env.CHAT_ID, "Email sent!", {
+			reply_to_message_id: msg.message_id
+		});
     
 	} catch(err) {
-		err.message.includes("404") ?telegramBot.sendMessage(process.env.CHAT_ID,"Sorry, I don't found the lead 😕") : telegramBot.sendMessage(process.env.CHAT_ID,"Something is wrong 🚑, please try again later");
+		err.message.includes("404") ? telegramBot.sendMessage(process.env.CHAT_ID,"Sorry, I don't found the lead 😕") : telegramBot.sendMessage(process.env.CHAT_ID,"Something is wrong 🚑, please try again later");
 	}
 } 

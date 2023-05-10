@@ -20,7 +20,7 @@
   #### Running the project 🚀
   
   1. First, rename the `.env.example` file to `.env` in the `autoProjectTelegramServer` and `autoProjectApi` folder  and complete the required environments .
-  2. Run pnpm i in all folders (`autoProjectTelegramServer`, `autoProjectFront`, `autoProjectApi`)
+  2. Run `pnpm i` in all folders (`autoProjectTelegramServer`, `autoProjectFront`, `autoProjectApi`)
   3. In the `autoProjectApi` folder, run this command:
  
     npx prisma migrate dev
